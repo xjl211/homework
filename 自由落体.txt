@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>球自由落体</title>
+	</head>
+	<style>
+		div{
+			margin: 0 auto;
+			width:100px;
+			height: 100px;
+			border-radius: 50%;
+			background: gray;
+			box-shadow: 10px 10px 5px black;
+			animation-name:myfist;
+			animation-fill-mode: forwards;
+			animation-duration:1s;
+			animation-timing-function:cubic-bezier(.54,.31,.63,.7);
+			position: relative;
+			
+		}
+		@keyframes myfist{
+			0%{top:0px}
+			100%{top:500px;}
+		}
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>

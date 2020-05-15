@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			display: inline-block;
+		}
+		.div1{
+			width:0;
+			border:55px solid red;
+			border-color: white;
+			border-bottom-color: lightblue;
+		}
+		.div2{
+        width:200px;
+        height: 0;
+		border-top:100px solid;
+		border-left:100px solid transparent;
+		border-right: 100px solid transparent;
+		transform: rotate(180deg);
+		}
+
+	</style>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+
+	</body>
+</html>
