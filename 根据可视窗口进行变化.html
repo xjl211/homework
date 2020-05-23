@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="C:/Users/86136/Desktop/自建/根据可视窗口进行变化/ziti/iconfont.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div>
+		<i>123</i>
+		<span class="iconfont iconiconset0290"></span>
+		</div>
+	<script>
+		window.onload=function(){
+			var maxWidth=document.documentElement.offsetWidth;
+			document.documentElement.style.fontSize=document.documentElement.offsetWidth/(maxWidth/100)+"px";
+			window.onresize=function(){
+				document.documentElement.style.fontSize=document.documentElement.offsetWidth/(maxWidth/100)+"px";
+			}
+		}
+	</script>
+	</body>
+</html>
