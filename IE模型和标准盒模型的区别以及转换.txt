@@ -1,0 +1,2 @@
+在标准盒模型中的宽度不包括padding和border这两个属性；而IE模型中有padding和border这两个属性；它们之间的转换可以使用box-sizing
+来进行转换，box-sizing属性里面的border-box属性可以用来定义padding属性和border属性使两个div高度宽度都相同
