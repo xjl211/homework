@@ -10,28 +10,48 @@
 				margin:0px;
 				padding: 0px;
 			}
+				
 			#div1{
+		    display:none;
+			/*text-align: center;
+			margin:auto;*/
+			position: relative;
+			left: 50%;
+			transform:translate(-50%);
+			width: 100px;
+			height: 100px;
+			background-color:red;
+			}
+			.div2{
+				display: none;
+				position: relative;
+				/*display:table;
+				vertical-align: middle;*/
+				top: 50%;
+				transform: translate(0,-50%);
 				width:100px;
 				height: 100px;
 				background-color:red;
-				position: relative;
-				margin: auto;
-			    top:50%;
-				transform: translateY(-50%);
-				display:blcok;
-				
 			}
-			#div2{
-			display: none;
-			left: 50%;
-			top:50%;
-			position:relative;
-			margin:0 auto;
-						}
+			.div3{
+				display: none;
+				position:relative;
+				/*display: flex;
+				left: 50%;
+				transform: translate(50%,0);*/
+				justify-content:center;
+			}
+			.div4{
+				position:relative;
+			   top:50%
+				/*transform:translate(0,50%);*/
+				}
 		</style>
 	</head>
 	<body>
-		<div id="div1"></div>
-		<div id="div2">111</div>
+       <div id="div1"></div>
+	   <div class="div2"></div>
+	   <div class="div3">111</div>
+	   <div class="div4">222</div>
 	</body>
 </html>
