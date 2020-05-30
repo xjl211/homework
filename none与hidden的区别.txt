@@ -1,6 +1,6 @@
 1：display：none会使元素消失并不会占用元素的任何空间，不会对布局造成影响，但还是可以通过javascript进行操作，visibility:hidden会占
 用元素的空间不会消失  会依旧保留。
 会对布局造成影响。
-2：visibility:hidden:具有继承性，父元素有hidde则其子元素也要继承这个hidde，但是如果子元素设置了visible那子元素就不会隐藏
-3：visibility：hidden就算是设置了这个属性但是并不会影响到计数， 
+2：visibility:hidden:具有继承性，父元素有hidden则其子元素也要继承这个hidden，但是如果子元素设置了visible那子元素就不会隐藏
+3：visibility：hidden就算是设置了这个属性但是并不会影响到计数，
 4：visibility：hidden在css3中可以使用transition可以进行动画的效果，可以配合使用，提高视觉体验。
