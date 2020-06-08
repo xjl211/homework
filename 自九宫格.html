@@ -71,7 +71,7 @@
 			function start(num,str){
 				var i=0;
 				var t=60;
-				var rod=2;
+				var rod=3;
 				var rnum=rod*8;
 				
 				timer=setTimeout(strfune,t);
@@ -85,10 +85,11 @@
 					i++;
 					
 					if(i<rnum){
+						t += (i-rnum+8)*1.5;
 						timer=setTimeout(strfune,t);
 					}
 					else if(i>=rnum-8 && i<rnum+num){
-						t += (i-rnum+8)*5;
+						t += (i-rnum+8)*1.5;
 						timer=setTimeout(strfune,t);
 					}
 					if(i>=rnum+num){
