@@ -1,114 +1,137 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>九宫格抽奖</title>
-		<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		#box{
-			width: 342px;
-			height: 342px;
-			margin: 30px auto;
-		}
-		#ul1{
-			 width: 342px;
-			 height:342px;
-			 list-style: none;
-		} 
-		 #ul1 li, #ul1 a{
-			 width: 100px;
-			 height: 100px;
-			line-height: 100px;
-			text-align: center;
-			position: relative;
-			border:1px solid gray;
-			float: left;
-			text-decoration: none;
-			font-size: 20px;
-		 }	
-			 #ul1 a:hover{
-				 cursor: pointer;
-				 color: khaki;
-			 }
-			 #ul1 .active{
-				 background: #808080;
-				 color: aliceblue;
-			 }
-			 #ul1 .model{
-				 display: block;
-			 }
-		</style>
-	</head>
-	<body>
-		<div id="box">
-			<ul id="ul1">
-				<li><div class="model">1</div></li>
-				<li><div class="model">2</div></li>
-				<li><div class="model">3</div></li>
-				<li><div class="model">4</div></li>
-				<a href="#">开始抽奖</a>
-				<li><div class="model">5</div></li>
-				<li><div class="model">6</div></li>
-				<li><div class="model">7</div></li>
-				<li><div class="model">8</div></li>
-			</ul>
-		</div>
-		<script>
-			var box=document.getElementById('box');
-			var li=document.getElementsByTagName('li');
-			var aa=document.getElementsByTagName('a')[0];
-			timer=null;
-			bready=false;
-			var ord=[0,1,2,4,7,6,5,3];
-			
-			function random(n,m){
-				return parseInt((m-n)*Math.random()+n);
-			}
-			
-			function start(num,str){
-				var i=0;
-				var t=60;
-				var rod=3;
-				var rnum=rod*8;
-				
-				timer=setTimeout(strfune,t);
-				function strfune(){
-					for(var j=0;j<li.length;j++){
-						li[j].className="";
-					}
-					
-					var od=ord[i%li.length];
-					li[od].className="active";
-					i++;
-					
-					if(i<rnum){
-						t += (i-rnum+8)*1.5;
-						timer=setTimeout(strfune,t);
-					}
-					else if(i>=rnum-8 && i<rnum+num){
-						t += (i-rnum+8)*1.5;
-						timer=setTimeout(strfune,t);
-					}
-					if(i>=rnum+num){
-						var timer2=null;
-						timer2=setTimeout(function(){
-							clearTimeout(timer2);
-						},1000)
-						bready=false;
-						clearTimeout(timer);
-					}
-				}
-			}
-			var num=0;
-			aa.onclick=function(){
-				if(bready) return false;
-				bready=true;
-				num=random(1,9);
-				start(num);
-			}
-		</script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>九宫格抽奖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 342px;
+            height: 342px;
+            margin: 30px auto;
+        }
+
+        #ul1 {
+            width: 342px;
+            height: 342px;
+            list-style: none;
+        }
+
+        #ul1 li, #ul1 a {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            position: relative;
+            border: 1px solid gray;
+            float: left;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        #ul1 a:hover {
+            cursor: pointer;
+            color: khaki;
+        }
+
+        #ul1 .active {
+            background: #808080;
+            color: aliceblue;
+        }
+
+        #ul1 .model {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li>
+            <div class="model">1</div>
+        </li>
+        <li>
+            <div class="model">2</div>
+        </li>
+        <li>
+            <div class="model">3</div>
+        </li>
+        <li>
+            <div class="model">8</div>
+        </li>
+        <a href="#">开始抽奖</a>
+        <li>
+            <div class="model">4</div>
+        </li>
+        <li>
+            <div class="model">7</div>
+        </li>
+        <li>
+            <div class="model">6</div>
+        </li>
+        <li>
+            <div class="model">5</div>
+        </li>
+    </ul>
+</div>
+<script>
+    var box = document.getElementById('box');
+    var li = document.getElementsByTagName('li');
+    var aa = document.getElementsByTagName('a')[0];
+    timer = null;
+    bready = false;
+    var ord = [0, 1, 2, 4, 7, 6, 5, 3];
+
+    function random(n, m) {
+        return parseInt((m - n) * Math.random() + n);
+    }
+
+    function start(num, str) {
+        var i = 0;
+        var t = 60;
+        var rod = 3;
+        var rnum = rod * 8;
+
+        timer = setTimeout(strfune, t);
+
+        function strfune() {
+            for (var j = 0; j < li.length; j++) {
+                li[j].className = "";
+            }
+
+            var od = ord[i % li.length];
+            li[od].className = "active";
+            i++;
+
+            if (i < 8) {
+                timer = setTimeout(strfune, t);
+            } else if (i >= rnum - 16 && i <= rnum) {
+                t += (i - rnum + 24) * 1.5;
+                timer = setTimeout(strfune, t);
+                if (i - 16 == num) {
+                    var timer2 = null;
+                    timer2 = setTimeout(function () {
+                        clearTimeout(timer2);
+                    }, 1000);
+                    bready = false;
+                    clearTimeout(timer);
+                }
+            }
+            console.log(i);
+        }
+    }
+
+    var num = 0;
+    aa.onclick = function () {
+        if (bready) return false;
+        bready = true;
+        num = random(1, 9);
+        start(num);
+    };
+</script>
+</body>
 </html>
